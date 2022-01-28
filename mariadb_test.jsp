@@ -3,7 +3,7 @@
 	Statement stm = null;
 	ResultSet rs = null;
 	Class.forName("org.mariadb.jdbc.Driver");
-	String myUrl = "jdbc:mariadb://127.0.0.1/xinet";
+	String myUrl = "jdbc:mariadb://127.0.0.1/bbs";
 	Connection conn = DriverManager.getConnection(myUrl, "jjaegii", "21812096");
 	try {
         	stm = conn.createStatement();

@@ -13,7 +13,7 @@ public class UserDAO {
 	
 	public UserDAO() {
 		try {
-			String dbURL = "jdbc:mariadb://127.0.0.1:3306/bbs";
+			String dbURL = "jdbc:mariadb://127.0.0.1/bbs";
 			String dbID = "jjaegii";
 			String dbPassword = "21812096";
 			Class.forName("org.mariadb.jdbc.Driver");
@@ -25,7 +25,7 @@ public class UserDAO {
 	}
 	
 	public int login(String userID, String userPassword) {
-		String SQL = "SELECT userPassword FROM USER WHERE userID=?";
+		String SQL = "SELECT userPassword FROM user WHERE userID=?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1,  userID);

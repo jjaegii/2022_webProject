@@ -1,25 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width" , initial_scale="1">
-<!นÝภภวüภฅ>
+<!๋ฐ์‘ํ•์น>
 <link rel="stylesheet" href="css/bootstrap.css">
-<!CSS วมทนภำฟ๖ลฉ>
-<title>JSP ฟฟฟ ฟฟ</title>
+<!CSS ํ”๋ ์์ํฌ>
+<title>JSP ๋ก๊ทธ์ธ ์—ฐ์ต</title>
 </head>
 <body>
 	<form method="post" action="loginAction.jsp">
-		<h3 style="text-align: center;">ฟฟฟ ฟฟ</h3>
-		<input type="text" class="form-control" placeholder="พฦภฬต๐"
+		<h3 style="text-align: center;">๋ก๊ทธ์ธ ํ”๋ฉด</h3>
+		<input type="text" class="form-control" placeholder="์•์ด๋””"
 			name="userID" maxlength="20">
 		<input type="password"
-			class="form-control" placeholder="ฟฟฟ" name="userPassword"
+			class="form-control" placeholder="๋น๋ฐ€๋ฒํธ" name="userPassword"
 			maxlength="20">
 		<input type="submit"
-			class="btn btn-primary form-control" value="ฟฟฟฟ">
+			class="btn btn-primary form-control" value="๋ก๊ทธ์ธ">
 	</form>
 </body>
 </html>

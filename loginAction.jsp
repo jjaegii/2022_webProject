@@ -1,16 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="user.UserDAO" %> <!import>
 <%@ page import="java.io.PrintWriter" %> <!import>
 <% request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="user" class="user.User" scope="page"/> <!Å¬·¡½º »ç¿ë ¿©±â¼± Å¬·¡½º¸¦ beanÀÌ¶ó ºÎ¸§>
-<jsp:setProperty name="user" property="userID"/> <!µ¥ÀÌÅÍ°ªÀ» ¼³Á¤ÇÒ¶§ »ç¿ë>
-<jsp:setProperty name="user" property="userPassword"/> <!µ¥ÀÌÅÍ°ªÀ» ¼³Á¤ÇÒ¶§ »ç¿ë>
+<jsp:useBean id="user" class="user.User" scope="page"/> <!í´ë˜ìŠ¤ ì‚¬ìš© ì—¬ê¸°ì„  í´ë˜ìŠ¤ë¥¼ beanì´ë¼ ë¶€ë¦„>
+<jsp:setProperty name="user" property="userID"/> <!ë°ì´í„°ê°’ì„ ì„¤ì •í• ë•Œ ì‚¬ìš©>
+<jsp:setProperty name="user" property="userPassword"/> <!ë°ì´í„°ê°’ì„ ì„¤ì •í• ë•Œ ì‚¬ìš©>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSP °Ô½ÃÆÇ À¥ »çÀÌÆ®</title>
+<title>JSP ê²Œì‹œíŒ ì›¹ ì‚¬ì´íŠ¸</title>
 </head>
 <body>
 	<%
@@ -25,22 +25,22 @@
 		else if(result == 0) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù.')");
-			script.println("history.back()"); // ÀÌÀü ÆäÀÌÁö·Î »ç¿ëÀÚ µ¹·Áº¸³»±â
+			script.println("alert('ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤.')");
+			script.println("history.back()"); // ì´ì „ í˜ì´ì§€ë¡œ ì‚¬ìš©ì ëŒë ¤ë³´ë‚´ê¸°
 			script.println("</script>");
 		}
 		else if(result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('Á¸ÀçÇÏÁö ¾Ê´Â ¾ÆÀÌµğÀÔ´Ï´Ù.')");
-			script.println("history.back()"); // ÀÌÀü ÆäÀÌÁö·Î »ç¿ëÀÚ µ¹·Áº¸³»±â
+			script.println("alert('ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì•„ì´ë””ì…ë‹ˆë‹¤.')");
+			script.println("history.back()"); // ì´ì „ í˜ì´ì§€ë¡œ ì‚¬ìš©ì ëŒë ¤ë³´ë‚´ê¸°
 			script.println("</script>");
 		}
 		else if(result == -2) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('DB ¿À·ù ¹ß»ı!')");
-			script.println("history.back()"); // ÀÌÀü ÆäÀÌÁö·Î »ç¿ëÀÚ µ¹·Áº¸³»±â
+			script.println("alert('DB ì˜¤ë¥˜ ë°œìƒ!')");
+			script.println("history.back()"); // ì´ì „ í˜ì´ì§€ë¡œ ì‚¬ìš©ì ëŒë ¤ë³´ë‚´ê¸°
 			script.println("</script>");
 		}
 	%>
