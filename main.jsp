@@ -7,6 +7,6 @@
     <title>login success</title>
   </head>
   <body>
-    로그인 화면입니다.
+    로그인 성공화면입니다.
   </body>
 </html>
