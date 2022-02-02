@@ -95,29 +95,29 @@
       <form method="post" action="joinAction.jsp">
           <h1>회원등록</h1><br>
             아이디<br>
-            <input type="text"><br>
+            <input type="text" name="userID"><br>
             비밀번호<br>
-            <input type="password"><br>
+            <input type="password" name="userPassword"><br>
             비밀번호 재확인<br>
-            <input type="password"><br>
+            <input type="password" name="REuserPassword"><br>
             이름<br>
-            <input type="text"><br>
+            <input type="text" name="userName"><br>
             생년월일<br>
-            <input type="text" placeholder="년(4자)" style= "width:70px;">
-            <input type="text" placeholder="월" style= "width:35px;">
-            <input type="text" placeholder="일" style= "width:35px;"><br>
+            <input type="text" placeholder="년(4자)" name="userBirthYear" style= "width:70px;">
+            <input type="text" placeholder="월" name="userBirthMonth" style= "width:35px;">
+            <input type="text" placeholder="일" name="userBirthDate" style= "width:35px;"><br>
             성별<br>
-            <label><input type="radio" name='gender'>남</label>
-            <label> <input type="radio" name='gender'>여</label><br>
+            <label><input type="radio" name="userGender">남</label>
+            <label> <input type="radio" name="userGender">여</label><br>
             휴대전화<br>
-            <input type="text" placeholder="ex) 01012345678" style ="color:grey"s><br>
+            <input type="text" placeholder="ex) 01012345678" name="userPhonenum" style ="color:grey"s><br>
             비밀번호 찾기 힌트<br>
-            <select>
+            <select name="userPasswordhintQ">
               <option>담당 교수님의 성함은?</option>
               <option>나의 보물 1호는?</option>
               <option>내가 가장 좋아하는 음식은?</option>
             </select><br>
-            <input type="text"><br><br>
+            <input type="text" name="userPasswordhintA"><br><br>
             <input type="submit" value="가입">
     </form>
     </div>

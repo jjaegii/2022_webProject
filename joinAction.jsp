@@ -22,28 +22,44 @@
 </head>
 <body>
 	<%
-		UserDAO userDAO = new UserDAO();
-		int result = userDAO.join(user.getUserID(),user.getUserPassword(),user.getUserName(),user.getUserBirthYear(),user.getUserBirthMonth(),user.getUserBirthDate(),user.getUserGender(),user.getUserPhonenum(),user.getUserPasswordhintQ(),user.getUserPasswordhintA());
-		if(result == 1) {
+		if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserBirthYear() == null || user.getUserBirthMonth() == null || user.getUserBirthDate() == null || user.getUserGender() == null || user.getUserPhonenum() == null || user.getUserPasswordhintQ() == null || user.getUserPasswordhintA() == null) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href = 'login.jsp'");
-			script.println("</script>");
-		}
-		else if(result == 0) {
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('중복되는 아이디입니다.')");
+			script.println("alert('입력이 안된 사항이 있습니다.')");
 			script.println("history.back()"); // 이전 페이지로 사용자 돌려보내기
 			script.println("</script>");
 		}
-		else if(result == -2) {
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('DB 오류 발생!')");
-			script.println("history.back()"); // 이전 페이지로 사용자 돌려보내기
-			script.println("</script>");
+		else {
+			UserDAO userDAO = new UserDAO();
+			int result = userDAO.join(user);
+			if(result == 1) {
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("location.href = 'login.jsp'");
+				script.println("</script>");
+			}
+			else if(result == 0) {
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('중복되는 아이디입니다.')");
+				script.println("history.back()"); // 이전 페이지로 사용자 돌려보내기
+				script.println("</script>");
+			}
+			else if(result == -2) {
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('DB 오류 발생!')");
+				script.println("history.back()"); // 이전 페이지로 사용자 돌려보내기
+				script.println("</script>");
+			}
+			else {
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('대체뭐지?')");
+				script.println("</script>");
+			}
 		}
+		
 	%>
 </body>
 </html>

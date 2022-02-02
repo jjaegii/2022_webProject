@@ -6,8 +6,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width" , initial_scale="1">
 <!반응형웹>
-<link rel="stylesheet" href="css/bootstrap.css">
-<!CSS 프레임워크>
 <title>JSP 로그인 연습</title>
 </head>
 <body>

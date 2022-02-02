@@ -45,20 +45,20 @@ public class UserDAO {
 		return -2; // 데이터베이스 오류
 	}
 	
-	public int join(String userID, String userPassword, String userName, String userBirthYear, String userBirthMonth, String userBirthDate, String userGender, String userPhonenum, String userPasswordhintQ, String userPasswordhintA) {
+	public int join(User user) {
 		String SQL = "INSERT INTO user (userID, userPassword, userName, userBirthYear, userBirthMonth, userBirthDate, userGender, userPhonenum, userPasswordhintQ, userPasswordhintA) VALUES (?,?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
-			pstmt.setString(2, userPassword);
-			pstmt.setString(3, userName);
-			pstmt.setString(4, userBirthYear);
-			pstmt.setString(5, userBirthMonth);
-			pstmt.setString(6, userBirthDate);
-			pstmt.setString(7, userGender);
-			pstmt.setString(8, userPhonenum);
-			pstmt.setString(9, userPasswordhintQ);
-			pstmt.setString(10, userPasswordhintA);
+			pstmt.setString(1, user.getUserID());
+			pstmt.setString(2, user.getUserPassword());
+			pstmt.setString(3, user.getUserName());
+			pstmt.setString(4, user.getUserBirthYear());
+			pstmt.setString(5, user.getUserBirthMonth());
+			pstmt.setString(6, user.getUserBirthDate());
+			pstmt.setString(7, user.getUserGender());
+			pstmt.setString(8, user.getUserPhonenum());
+			pstmt.setString(9, user.getUserPasswordhintQ());
+			pstmt.setString(10, user.getUserPasswordhintA());
 			
 			pstmt.executeUpdate();
 			return 1; // 데이터 삽입 성공
