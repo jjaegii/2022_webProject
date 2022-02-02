@@ -1,0 +1,71 @@
+body{
+  height: 100vh;
+  background-color: #6667AB;
+}
+#login-box{
+  background-color: white;
+  color: #6667AB;
+  text-align: center;
+  width: 400px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 20px 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+#login-box h2{
+  margin-top: 15%;
+  margin-bottom: 10%;
+}
+.idForm{
+  margin: 20px;
+}
+.passForm{
+  margin: 20px;
+}
+.btn{
+    width: 203px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(120deg,#3498db,#8e44ad,#3498db);
+    background-size: 200%;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    font-size: 12pt;
+}
+.btn:hover{
+  background-position: right;
+}
+input[type=text]{
+  border: 3px solid #6667AB;
+  border-radius: 10px;
+  height: 40px;
+  width: 200px;
+  font-size: 13pt;
+  font: #6667AB;
+}
+input[type=password]{
+  border: 3px solid #6667AB;
+  border-radius: 10px;
+  height: 40px;
+  width: 200px;
+  font-size: 13pt;
+  color: #6667AB;
+}
+ul{
+  list-style: none;
+  padding: 30px;
+  margin: 0;
+}
+li{
+  text-align: center;
+  display: inline;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+

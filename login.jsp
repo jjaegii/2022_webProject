@@ -1,23 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width" , initial_scale="1">
-<!반응형웹>
-<title>JSP 로그인 연습</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="login_style.css">
 </head>
 <body>
-	<form method="post" action="loginAction.jsp">
-		<h3 style="text-align: center;">로그인 화면</h3>
-		<input type="text" class="form-control" placeholder="아이디"
-			name="userID" maxlength="20">
-		<input type="password"
-			class="form-control" placeholder="비밀번호" name="userPassword"
-			maxlength="20">
-		<input type="submit"
-			class="btn btn-primary form-control" value="로그인">
-	</form>
+	<div id="login-box">
+		<h2>Hello World</h2>
+		<form method="post" action="loginAction.jsp">
+			<div class="idForm">
+				<input type="text" placeholder="ID" name="userID">
+			</div>
+			<div class="passForm">
+				<input type="password" placeholder="password" name="userPassword">
+			</div>
+			<input type="submit" class="btn" value="Login">
+			<ul>
+				<li><b>회원등록</b></li>
+				<li><b>아이디/비밀번호 찾기</b></li>
+			</ul>
+		</form>
+	</div>
 </body>
 </html>
+
