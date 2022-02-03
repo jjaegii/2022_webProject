@@ -4,8 +4,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" , initial_scale="1"> <!반응형웹>
-    <title>회원가입</title>
+    <title></title>
     <style>
     h1{
       text-align: center;
@@ -13,7 +12,7 @@
       margin-bottom: 5px;
     }
     body{
-         background: #5C5E99;
+         background: rgb(102,103,171);
     }
     div{
       padding:30px;
@@ -31,18 +30,22 @@
       background: white;
       text-align:cetner;
       border-radius:10px;
+      box-shadow: 0 2px  5px rgba(0,0,0,.2);
     }
     .box h1{
       color:#5C5E99;
       font-weight:500;
       margin-right: 37%;
       margin-top: 0;
+      text-shadow: 0 3px  5px rgba(0,0,0,.2);
+
     }
     .box input[type = "text"],.box input[type = "password"]{
       border: 1px solid #5C5E99;
       border-radius:5px;
       transition: 0.25s;
       outline: none;
+      box-shadow: 0 2px  5px rgba(0,0,0,.2);
     }
     .box input[type = "submit"]{
     border: 0;
@@ -57,13 +60,15 @@
     transition: 0.25s;
     cursor: pointer;
     margin-left: 50px;
+    box-shadow: 0 2px  5px rgba(0,0,0,.2);
     }
     .box input[type = "text"]:focus,.box input[type = "password"]:focus{
-      padding: 30px;
+      padding: 15px;
       border-color: #bdd4e7;
     }
     .box input[type = "submit"]:hover{
-        background: linear-gradient(120deg,#bdd4e7,#5C5E99);
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        box-shadow: 0 2px  5px rgba(0,0,0,.2);
         color: white;
         border: none;
     }
@@ -76,23 +81,79 @@
      border:1px solid #5C5E99;
      border-radius:5px;
     }
+    .btn_submit{
+      background-color: rgb(102,103,171);
+      color: white;
+      background-position: 0px 0px;
+      background-repeat: no-repeat;
+      border: 0px;
+      cursor: pointer;
+      outline: 0;
+    }
+    .btn_submit2{
+          background-color: white;
+          color: white;
+          background-position: 0px 0px;
+          background-repeat: no-repeat;
+          border: 0px;
+          cursor: pointer;
+          outline: 0;
+    }
+    @media(max-width:650px){
+      .box{
+        weight: 10px;
+        padding: 10px;
+        background-color:rgb(102,103,171);
+      }
+      .box h1{
+        color: white;
+        font-size: 150%;
+
+      }
+      form{
+        color: white;
+        font-size: 80%;
+      }
+      .box input[type = "submit"]{
+        border-color: white;
+        color: white;
+        padding: 5px 12px;
+      }
+      .btn_submit2{
+        background-color:rgb(102,103,171);
+        color:rgb(102,103,171);
+      }
+      div{
+        border: 4px solid white;
+      }
+      body{
+        background: rgb(102,103,171);
+      }
+        .box input[type = "submit"]:hover{
+          background: white;
+          box-shadow: 0 0 10px #fff,
+                      0 0 20px #fff,
+                      0 0 30px violet;
+      }
+    }
     </style>
   </head>
   <body>
-    <input id="night_day" type="button" value="☆" onclick="
-      if(this.value ==='☆'){
-        document.querySelector('body').style.backgroundColor='#bdd4e7';
-        document.querySelector('body').style.color='black';
-        this.value = '★';
-      }
-      else{
-        document.querySelector('body').style.backgroundColor='#5C5E99';
-        document.querySelector('body').style.color='black';
-        this.value = '☆';
-      }
-    ">
+    <button type="button" onclick="location.href='login.jsp'">←</button>
     <div  class="box">
       <form method="post" action="joinAction.jsp">
+        <input id="night_day" class="btn_submit2" type="button" value="☆" onclick="
+          if(this.value ==='☆'){
+            document.querySelector('body').style.backgroundColor='#bdd4e7';
+            document.querySelector('body').style.color='black';
+            this.value = '★';
+          }
+          else{
+            document.querySelector('body').style.backgroundColor='#5C5E99';
+            document.querySelector('body').style.color='black';
+            this.value = '☆';
+          }
+        ">
           <h1>회원등록</h1><br>
             아이디<br>
             <input type="text" name="userID"><br>
