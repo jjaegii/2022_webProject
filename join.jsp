@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -18,7 +18,7 @@
       padding:30px;
       margin:10px;
       width:650px;
-      -webkit-border-radius:10px;
+      border-radius:10px;
     }
     .box{
       width: 400px;
@@ -46,6 +46,16 @@
       transition: 0.25s;
       outline: none;
       box-shadow: 0 2px  5px rgba(0,0,0,.2);
+    }
+    button{
+      border: 0;
+      background: none;
+    }
+    button:hover{
+      font-size: 300%;
+      text-shadow: 0 0 10px #fff,
+                  0 0 20px #fff,
+                  0 0 30px #5C5E99;
     }
     .box input[type = "submit"]{
     border: 0;
@@ -135,13 +145,15 @@
                       0 0 20px #fff,
                       0 0 30px violet;
       }
+      button{
+        color:white;
+      }
     }
     </style>
   </head>
   <body>
-    <button type="button" onclick="location.href='login.jsp'">←</button>
     <div  class="box">
-      <form method="post" action="joinAction.jsp">
+      <button type="button" onclick="location.href='login.jsp'">←</button>
         <input id="night_day" class="btn_submit2" type="button" value="☆" onclick="
           if(this.value ==='☆'){
             document.querySelector('body').style.backgroundColor='#bdd4e7';
@@ -149,37 +161,45 @@
             this.value = '★';
           }
           else{
-            document.querySelector('body').style.backgroundColor='#5C5E99';
+            document.querySelector('body').style.backgroundColor=' rgb(102,103,171)';
             document.querySelector('body').style.color='black';
             this.value = '☆';
           }
         ">
+          <form method="post" action="joinAction.jsp">
           <h1>회원등록</h1><br>
             아이디<br>
-            <input type="text" name="userID"><br>
+            <input type="text" minlength = "5" onKeyup="this.value=this.value.replace(/[^a-zA0-9]/g, '')"
+            onkeypress="if(event.keyCode==13){return false;}" name="userID" /><br>
             비밀번호<br>
-            <input type="password" name="userPassword"><br>
+            <input type="password" minlength= "4" onkeypress="if(event.keyCode==13){return false;}" name="userPassword" /><br>
             비밀번호 재확인<br>
-            <input type="password" name="REuserPassword"><br>
+            <input type="password" minlength="4" onkeypress="if(event.keyCode==13){return false;}" name="REuserPassword" /><br>
             이름<br>
-            <input type="text" name="userName"><br>
+            <input type="text" onKeyup="this.value= this.value.replace(/[^ㄱ-힣a-zA]/g, '')"
+            onkeypress="if(event.keyCode==13){return false;}" name="userName" /><br>
             생년월일<br>
-            <input type="text" placeholder="년(4자)" name="userBirthYear" style= "width:70px;">
-            <input type="text" placeholder="월" name="userBirthMonth" style= "width:35px;">
-            <input type="text" placeholder="일" name="userBirthDate" style= "width:35px;"><br>
+            <input type="number" min ="1920" max="2020" onKeyup="this.value=this.value.replace(/[^0-9]/g, '')"
+            onkeypress="if(event.keyCode==13){return false;}" placeholder="년(4자)" name="userBirthYear" style= "width:70px;"/>
+            <input type="number" min = "1" max="12" onKeyup="this.value=this.value.replace(/[^0-9]/g, '')"
+            onkeypress="if(event.keyCode==13){return false;}" placeholder="월" name="userBirthMonth" style= "width:35px;" />
+            <input type="number" min = "1" max="31"onKeyup="this.value=this.value.replace(/[^0-9]/g, '')"
+             onkeypress="if(event.keyCode==13){return false;}" placeholder="일" name="userBirthDate" style= "width:35px;" /><br>
             성별<br>
-            <label><input type="radio" name="userGender">남</label>
-            <label> <input type="radio" name="userGender">여</label><br>
+            <label><input type="radio" name="userGender" />남</label>
+            <label> <input type="radio" name="userGender" />여</label><br>
             휴대전화<br>
-            <input type="text" placeholder="ex) 01012345678" name="userPhonenum" style ="color:grey"s><br>
+            <input type="text" placeholder="ex) 01012345678" minlength="10" maxlength="11"
+            onkeypress="if(event.keyCode==13){return false;}"
+            onKeyup="this.value=this.value.replace(/[^0-9]/g, '')" name="userPhonenum" /><br>
             비밀번호 찾기 힌트<br>
             <select name="userPasswordhintQ">
               <option>담당 교수님의 성함은?</option>
               <option>나의 보물 1호는?</option>
               <option>내가 가장 좋아하는 음식은?</option>
             </select><br>
-            <input type="text" name="userPasswordhintA"><br><br>
-            <input type="submit" value="가입">
+            <input type="text" name="userPasswordhintA" /><br><br>
+            <input type="submit" value="가입" />
     </form>
     </div>
   </body>
