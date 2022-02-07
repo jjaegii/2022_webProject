@@ -3,11 +3,11 @@
 	Statement stm = null;
 	ResultSet rs = null;
 	Class.forName("org.mariadb.jdbc.Driver");
-	String myUrl = "jdbc:mariadb://127.0.0.1/bbs";
+	String myUrl = "jdbc:mariadb://192.168.0.5/bbs";
 	Connection conn = DriverManager.getConnection(myUrl, "jjaegii", "21812096");
 	try {
         	stm = conn.createStatement();
-        	if(stm.execute("select * from Users")) {
+        	if(stm.execute("select * from users")) {
                 	rs = stm.getResultSet();
         }
         while(rs.next()) {
