@@ -84,7 +84,7 @@
   <body class = "box">
     <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;________ 님 접속 중</a> 
     <input type="button" value="로그아웃"><br>
-    <button type="button" onclick="location.href='login.html'">←</button>
+    <button type="button" onclick="location.href='login.jsp'">←</button>
     <h1 class="header">할 말 있으면 해봐</h1>
     <input type="button" value="글쓰기">
     <table class="table">
