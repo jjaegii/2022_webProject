@@ -70,21 +70,23 @@ public class UserDAO {
 	}
 	
 	public String idfind(String userName, String userPhonenum) {
-			
+		
 		  String user_id=null;
-	      String SQL = "SELECT user_id FROM user WHERE userName=? and userPhonenum=?";
+	      String SQL = "SELECT userID FROM user WHERE userName=? and userPhonenum=?";
 	      try {
 	    	  pstmt = conn.prepareStatement(SQL);
 		      pstmt.setString(1, userName);
 		      pstmt.setString(2, userPhonenum);
-		      rs = pstmt.excuteQuery();
+		      rs = pstmt.executeQuery();
 		      while(rs.next()) {
-		    	  user_id=rs.getString("user_id");
+		    	  user_id=rs.getString("userID");
+		    	  return user_id;
 		      }
+		      return "아이디없음";
 	      }catch(Exception e) {
 	    	  System.out.println(e);
 	      }
-	    return user_id;
+	      return "DB오류";
 	   }
 	
 }
