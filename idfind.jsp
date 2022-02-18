@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -57,7 +59,7 @@
   </head>
   <body bgcolor="#6667AB">
     <button type="button" onclick="location.href='id.jsp'">←</button>
-    <div id="main">
+    <div id="ma*in">
       <h3>Every-World<img src="logo.jpg" width="30"></h3>
       <br><br><br><br>
       <div class="txt">당신의 ID는 ~~~입니다.</div>

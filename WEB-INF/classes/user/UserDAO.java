@@ -68,5 +68,24 @@ public class UserDAO {
 		
 		return -2; // DB 오류
 	}
+	
+	public String idfind(String userName, String userPhonenum) {
+			
+		  String user_id=null;
+	      String SQL = "SELECT user_id FROM user WHERE userName=? and userPhonenum=?";
+	      try {
+	    	  pstmt = conn.prepareStatement(SQL);
+		      pstmt.setString(1, userName);
+		      pstmt.setString(2, userPhonenum);
+		      rs = pstmt.excuteQuery();
+		      while(rs.next()) {
+		    	  user_id=rs.getString("user_id");
+		      }
+	      }catch(Exception e) {
+	    	  System.out.println(e);
+	      }
+	    return user_id;
+	   }
+	
 }
 
