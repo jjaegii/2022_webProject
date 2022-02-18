@@ -36,7 +36,7 @@ request.setCharacterEncoding("UTF-8");
          }
          else{
             //화면에 아이디 출력하기
-           	//유정저이ㅓㅈ어엉
+           	
             response.sendRedirect("idfind.jsp?found_id=" + "result");
    			PrintWriter script = response.getWriter();
 			script.println("<script>");
