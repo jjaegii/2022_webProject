@@ -7,6 +7,9 @@
     <title>login success</title>
   </head>
   <body>
-    로그인 성공화면입니다.
+    로그인 성공!! 게시판 접속 중..
+		    <script>
+	  		location.href = 'board.jsp'
+	  	</script>
   </body>
 </html>
