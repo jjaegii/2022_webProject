@@ -70,7 +70,7 @@ button:hover {
 				onKeyup="this.value=this.value.replace(/[^0-9]/g, '')">
 			<p>
 				<input type="submit" class="button" value="아이디 찾기"
-					onclick="location.href='idfind.jsp'">
+					onclick="location.href='idfindAction.jsp'">
 			</p>
 		</form>
 	</div>

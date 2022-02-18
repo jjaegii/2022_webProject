@@ -58,11 +58,17 @@
     </style>
   </head>
   <body bgcolor="#6667AB">
+  	<% 
+  	String found_id = (String)request.getAttribute("found_id"); 
+  	//System.out.println(found_id);
+  	%>
     <button type="button" onclick="location.href='id.jsp'">←</button>
     <div id="ma*in">
       <h3>Every-World<img src="logo.jpg" width="30"></h3>
       <br><br><br><br>
-      <div class="txt">당신의 ID는 ~~~입니다.</div>
+      <h4> 당신의 ID는 </h4>
+      <%=found_id %>
+      <h4> 입니다. </h4>
       <p><input  type="submit" class="button" value="로그인 하러가기" onclick="location.href='login.jsp'"></p>
     </div>
   </body>
