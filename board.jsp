@@ -5,13 +5,37 @@
   <head>
     <meta charset="utf-8">
     <style>
-        h1{
-            text-align:center;
+       header {
+            background: #6667AB;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .header {
-        text-align: center;
-        color: #ff056d;
-        animation: hue 3s infinite linear;
+        body{
+            margin:0;
+        }
+        .log{
+            border: none white;
+            border-radius: 4px;
+            background: white;
+            color: #6667AB;
+            text-align: center;
+            font-size: 13px;
+            cursor: pointer;
+            width: fit-content;
+            padding: 4px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .header2 {
+            color: white;
+	        font-family: Verdana;
+            font-weight: bold;
+            font-size:25px;
+            margin-left:40%;
+            color: #ff056d;
+            animation: hue 3s infinite linear;
         }
         @keyframes hue {
         from {
@@ -21,24 +45,14 @@
             filter: hue-rotate(-360deg);
         }
         }
-        .box {
-            width: 80%;
-            height: 75%;
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: cetner;
-            border-radius: 10px;
-        }
         table{
             border-collapse:collapse;
             border-spacing: 0;
             margin-left: 10px;
-            border: 2px solid grey;
+            border: 2px solid #6667AB;
         }
         th{
-            border: 2px solid grey;
+            border: 2px solid #6667AB;
         }
         td{
             border: 1px solid white;
@@ -49,19 +63,9 @@
         tr:hover{
             background-color: rgb(206, 206, 206);
         }
-        button{
-        border: 0;
-        background: none;
-        }
-        button:hover{
-        font-size: 300%;
-        text-shadow: 0 0 10px #fff,
-                    0 0 20px #fff,
-                    0 0 30px #5C5E99;
-        }
-        input[type="button"]{
+        .write{
             border:none;
-            margin-left:80%
+            margin-left:1%;
         }
         a{
             color:white;
@@ -70,23 +74,37 @@
             color:black;
             background-color:rgb(216, 216, 216);
         }
-    </style>
-    <script>
-        function num(){
-            var i = 0;
-            i = i+1;
-            document.write(i);
+        .num{
+            border:none;
+            margin-left:20%;
+            background-color: white;
+            color:grey;
         }
-    </script>
-    
+        .num:hover{
+            color:#6667AB;
+        }
+        table.table{
+            margin-left:0;
+        }
+        @media  ( min-width :800px){
+            table.table{
+                margin-left:7%;
+            }
+            .write{
+                margin-left:7%;
+            }
+        }
+    </style>
+     <header>    
+        <h1 class="header2">할 말 있으면 해봐</h1>
+        <input type="submit" class="log" value="로그아웃"
+					onclick="location.href='login.jsp'">
+    </header>
     <title></title>
   </head>
-  <body class = "box">
-    <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;________ 님 접속 중</a> 
-    <input type="button" value="로그아웃"><br>
-    <button type="button" onclick="location.href='login.jsp'">←</button>
-    <h1 class="header">할 말 있으면 해봐</h1>
-    <input type="button" value="글쓰기">
+  <body>
+    <input type="button" class="write" value="글쓰기" onclick="location.href='writingboard.jsp'">
+    _______ 님 로그인 중
     <table class="table">
         <thead>
             <tr>
@@ -96,24 +114,30 @@
                 <th>날짜</th>
             </tr>
             <tr>
-                <td><script>num();</script></td>
+                <td>3</td>
                 <td>맘에 안드네</td>
                 <td>혜민</td>
                 <td>2022.02.14</td>
             </tr>
             <tr>
-                <td><script>num();</script></td>
+                <td>2</td>
                 <td>숫자 왜 안바뀜</td>
                 <td>혜민</td>
                 <td>2022.02.14</td>
             </tr>
             <tr>
-                <td><script>num();</script></td>
+                <td>1</td>
                 <td>이거 어떻게 해?</td>
                 <td>혜민</td>
                 <td>2022.02.14</td>
             </tr>
         </thead>
     </table>
+    <br>
+    <ui>
+        <input type="button" class="num" value="1">
+        <input type="button" class="num" value="2">
+        <input type="button" class="num" value="3">
+    </ui>
   </body>
 </html>
