@@ -19,7 +19,7 @@
 		if(result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href = 'main.jsp?name=user.getUserID()'");
+			script.println("location.href = 'board.jsp?name=user.getUserID()'");
 			script.println("</script>");
 		}
 		else if(result == 0) {
