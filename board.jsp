@@ -115,7 +115,12 @@
   </head>
   <body>
     <input type="button" class="write" value="글쓰기" onclick="location.href='writingboard.jsp'">
-    <a  class="header2">__________ 님 로그인 중</a>
+    <a  class="header2">
+    	<script>
+    	temp = location.href.split("?");
+		name = temp[1];
+		document.write(name);
+		</script> 님 로그인 중</a>
     <table class="table">
         <thead>
             <tr>
