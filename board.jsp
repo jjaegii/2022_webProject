@@ -15,6 +15,11 @@
         body{
             margin:0;
         }
+        h1{
+            margin-left:40%;
+            color:white;
+            font-size:25px;
+        }
         .log{
             border: none white;
             border-radius: 4px;
@@ -32,10 +37,10 @@
             color: white;
 	        font-family: Verdana;
             font-weight: bold;
-            font-size:25px;
-            margin-left:40%;
+            margin-left:60%;
+            font-size:13px;
             color: #ff056d;
-            animation: hue 3s infinite linear;
+            animation: hue 1s infinite linear;
         }
         @keyframes hue {
         from {
@@ -66,6 +71,9 @@
         .write{
             border:none;
             margin-left:1%;
+            cursor: pointer;
+            margin-top:1%;
+            margin-bottom:1%;
         }
         a{
             color:white;
@@ -93,10 +101,13 @@
             .write{
                 margin-left:7%;
             }
+            .header2{
+                margin-left:50%;
+            }
         }
     </style>
      <header>    
-        <h1 class="header2">할 말 있으면 해봐</h1>
+        <h1>할 말 있으면 해봐</h1>
         <input type="submit" class="log" value="로그아웃"
 					onclick="location.href='login.jsp'">
     </header>
@@ -104,7 +115,7 @@
   </head>
   <body>
     <input type="button" class="write" value="글쓰기" onclick="location.href='writingboard.jsp'">
-    _______ 님 로그인 중
+    <a  class="header2">__________ 님 로그인 중</a>
     <table class="table">
         <thead>
             <tr>
