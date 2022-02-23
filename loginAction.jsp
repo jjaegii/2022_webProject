@@ -17,10 +17,11 @@
 		UserDAO userDAO = new UserDAO();
 		int result = userDAO.login(user.getUserID(), user.getUserPassword());
 		if(result == 1) {
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("location.href = 'board.jsp?name=user.getUserID()'");
-			script.println("</script>");
+			%>
+			<script>
+				location.href = 'board.jsp?<%= user.getUserID() %>'
+			</script>
+			<%
 		}
 		else if(result == 0) {
 			PrintWriter script = response.getWriter();
