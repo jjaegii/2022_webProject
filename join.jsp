@@ -201,8 +201,8 @@ select {
 				onKeyup="this.value=this.value.replace(/[^0-9]/g, '')"
 				onkeypress="if(event.keyCode==13){return false;}" placeholder="일"
 				name="userBirthDate" style="width: 35px;" /><br> 성별<br> <label><input
-				type="radio" name="userGender" />남</label> <label> <input
-				type="radio" name="userGender" />여
+				type="radio" name="userGender" value='남'/>남</label> <label> <input
+				type="radio" name="userGender" value='여'/>여
 			</label><br> 휴대전화<br> <input type="text"
 				placeholder="ex) 01012345678" minlength="10" maxlength="11"
 				onkeypress="if(event.keyCode==13){return false;}"
@@ -212,8 +212,8 @@ select {
 				<option>담당 교수님의 성함은?</option>
 				<option>나의 보물 1호는?</option>
 				<option>내가 가장 좋아하는 음식은?</option>
-			</select><br> <input type="text" name="userPasswordhintA" /><br>
-			<br> <input type="submit" value="가입" />
+			</select><br> <input type="text" name="userPasswordhintA" /><br> <br>
+			<input type="submit" value="가입" />
 		</form>
 	</div>
 </body>
