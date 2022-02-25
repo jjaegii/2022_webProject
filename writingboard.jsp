@@ -5,15 +5,6 @@
 <head>
     <meta charset="utf-8">
     <title>게시판 글쓰기</title>
-    
-        <!-- include libraries(jQuery, bootstrap) -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <!-- include summernote css/js -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 </head>
 <body>
     <style>
@@ -24,6 +15,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 35px;
         }
         h3{
             color: white;
@@ -39,7 +31,7 @@
             width: 90%;
             display:block;
             margin: auto;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             margin-top: 15px;
             
         }
@@ -55,10 +47,10 @@
             float: right;
             margin-right: 3%;
             font-weight: bold;
-            padding-top: 5px;
-            padding-right: 8px;
+            padding-top: 4px;
+            padding-right: 7px;
             padding-bottom: 4px;
-            padding-left: 8px;
+            padding-left: 7px;
             margin-bottom: 5%;
         }
         button {
@@ -83,44 +75,27 @@
             padding: 4px;
             font-weight: bold;
         }
+        .txt{
+            border:1.5px solid #6667AB;
+            border-radius: 2px;
+            padding: 7px;
+            width: 90%;
+            height: 320px;
+            display:block;
+            margin: auto;
+            margin-bottom: 15px;
+        }
     </style>
     <header>    
         <button type="button" onclick="location.href='board.jsp'">←</button>
         <h3>게시판 글쓰기</h3>
         <input type="submit" class="log" value="로그아웃"
-					onclick="location.href='?.jsp'">
+					onclick="location.href='login.jsp'">
     </header>
     
     <br>
     <input type="text" class="title" placeholder="제목을 입력하세요."> 
-    <script>
-        $(document).ready(function () {
-            $('#summernote').summernote({
-              height: 500,                 
-              minHeight: 500,            
-              maxHeight: 500,            
-              focus: true,                  
-              lang: "ko-KR",					
-              placeholder: '내용을 입력해주세요.',	
-              toolbar: [
-                ['fontname', ['fontname']],
-                ['fontsize', ['fontsize']],
-                ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
-                ['color', ['forecolor', 'color']],
-                ['table', ['table']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']],
-                ['insert', ['picture', 'link', 'video']],
-                ['view', ['fullscreen', 'help']]
-              ],
-              fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체',
-                '굴림', '돋음체', '바탕체'],
-              fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36',
-                '50', '72']
-            });
-          });
-    </script>
-    <textarea id="summernote" name="editordata" placeholder="내용을 입력하세요."></textarea>
+    <textarea class="txt" placeholder="내용을 입력하세요."></textarea>
     <input type="submit" class="button" value="업로드"
 					onclick="location.href='board.jsp'">
 </body>
