@@ -91,12 +91,101 @@
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            /* background: linear-gradient(135deg, #6e8efb, #a777e3); */
             background: #6667AB;
             color: white;
             border: none;
         }
+        .comunication{
+            margin: 10px;
+        }
+        /*댓글 기능 CSS*/
+        #commentInfo{
+            margin: 10px;
+            margin-top: 20px;
+            width: 100%;
+            font-size: 15px;
+            color: #5c5c68;
+        }
+        .comment-input{
+            margin-top: 5px;
+            width: 90%;
+            height: 26px;
+            border: 2px solid #6667AB;
+            border-radius: 10px;
+        }
     </style>
+    <!-- <script>
+        const inputBar = document.querySelector('.comment-input');
+        const rootDiv = document.querySelector('.comments');
+        const btn = document.querySelector('#submit');
+        const mainCommentCount = document.querySelector('#count');
+
+        /*댓글 단 시간 표시*/
+        function generateTime(){
+            const date = new Data();
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            const wDate = date.getDate();
+            const hour = date.getHours();
+            const min = date.getMinutes();
+
+            const time = year+'-'+month+'-'+wDate+' '+hour+':'+min;
+            return time;
+        }
+
+        /*댓글 보여주기*/
+        function showComment(comment){
+            const userName = document.createElement('div');
+            const inputValue = document.createElement('span');
+            const showTime = document.createElement('div');
+            const voteDiv = document.createElement('div');
+            const countSpan = document.createElement('span');
+            const commentList = document.createElement('div');
+
+            //삭제버튼 만들기
+            const delBtn = document.createElement('button');
+            delBtn.className ="deleteComment";
+            delBtn.innerHTML="삭제";
+            commentList.className = "eachComment";
+            userName.className="name";
+            inputValue.className="inputValue";
+            showTime.className="time";
+            voteDiv.className="voteDiv";
+            //유저네임가져오기
+            userName.innerHTML = generateUserName();
+            userName.appendChild(delBtn);
+            //입력값 넘기기
+            inputValue.innerText = comment;
+            //타임스템프찍기
+            showTime.innerHTML = generateTime();
+            countSpan.innerHTML=0;
+
+            //댓글뿌려주기
+            //commentList.appendChild(userName);
+            commentList.appendChild(inputValue);
+            commentList.appendChild(showTime);
+            commentList.appendChild(voteDiv);
+            rootDiv.prepend(commentList);
+            voteUp.addEventListener("click",numberCount);
+            voteDown.addEventListener("click",numberCount);
+            delBtn.addEventListener("click",deleteComments);
+            console.dir(rootDiv);
+        }
+
+        //버튼만들기+입력값 전달
+        function pressBtn(){
+            const currentVal = inputBar.value;
+            if(!currentVal.length){
+                alert("댓글을 입력해주세요><");
+            }
+            else{
+                showComment(currentVal);
+                mainCommentCount.innerHTML++;
+                inputBar.value ='';
+            }
+        } 
+        btn.onclick = pressBtn;
+    </script> -->
 </head>
 <body>
     <header>
@@ -110,29 +199,19 @@
         <span class="writer"><h4>2022.02.18&nbsp;&nbsp;컴공여신이 될 사람</h4></span>
     </div>
     <div class="board_option">
-        <input type="submit"  class="edit" value="수정하기" onclick="colorChange(this);"></input>
+        <input type="submit"  class="edit" value="수정하기"></input>
         <input type="submit" class="delete" value="삭제하기"></input>
         <p style=clear:both;></p>
     </div>
     <div class="board_main">
         <div class="article">
             <p>
-                안녕하세요 ㅎㅎ
-                이번 컴퓨터공학과에 새로 들어오게 된 안수진이라 합니다
-                선배님들 잘 부탁 드립니다^^
-                저는 오늘 백신3차를 맞았는데 꽤나 멀쩡합니다
-                강인하게 잘 버티고 있다 이말이죠 ㅋㅋ
-                이 글은 제가 수정하고 푸시할때마다 바뀔 얘정인데
-                재미있게 봐주세요^^
-                구독과 좋아요는 저에게 힘이 된답니다 히히
-                안녕하세요 ㅎㅎ
-                이번 컴퓨터공학과에 새로 들어오게 된 안수진이라 합니다
-                선배님들 잘 부탁 드립니다^^
-                저는 오늘 백신3차를 맞았는데 꽤나 멀쩡합니다
-                강인하게 잘 버티고 있다 이말이죠 ㅋㅋ
-                이 글은 제가 수정하고 푸시할때마다 바뀔 얘정인데
-                재미있게 봐주세요^^
-                구독과 좋아요는 저에게 힘이 된답니다 히히
+                히히 여러분 개강이 얼마남지 않았어요
+                완전 절망적인데 저는 왜 바쁜거같죠?
+                알바 그냥 다 관두고싶네여 히히히히
+                알바 두탕은 무슨 욕심내지 않을게여 그냥 하 시밧바사사빗리ㅏ빌
+                히히ㅣ히ㅣ히히히힣히 여러분 열심히 삽시다 이번학기
+                그렇다고 너무 공부만 하지마요ㅠ 참치마요ㅠ
             </p>
         </div>
         <div class="list">
@@ -147,7 +226,19 @@
     <br>
     <div class="comunication">
         <input type="submit" value="공감♥"></input>
-        <input type="submit" value="댓글"></input>
+        <input type="submit" class="comment-count" value="댓글"></input>
+    </div>
+
+    <div class="commentInfo">
+        <div class="comment-count">댓글<span id="count">0</span></div>
+        <input class="comment-input" placeholder="댓글을 입력해주세요><!">
+        <input type="submit" id="submit" value="등록"></input>
+    </div>
+
+    <div class ="comments">
+        <span id="userName">user1</span><br>
+        <span id="inputValue">하 개강하기 싫어 학교 폭발해줘</span><br>
+        <span id="showTime">2022-02-24</span><br>
     </div>
 </body>
 </html>
